@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>JBlackjack</title>
+	<!--<script src="https://cdn.tailwindcss.com"></script>-->
+	<script src='./tailwind.css.v3.3.3.js'></script>
+</head>
+<body class='w-full h-screen select-none bg-[#667b99]'>
+	<nav class='flex items-center justify-between h-[10%] w-80 tracking-tight font-bold text-xl capitalize text-white mx-auto'>
+		<h1>JBlackjack</h1>
+		<div class='flex items-center gap-x-1'>
+			<img src="./assets/ficha.png" alt='ficha' class='w-6 h-6'>
+			<span id='point'></span>
+		</div>
+	</nav>
+	<main class='flex flex-col justify-around items-center w-80 h-[90%] bg-[#DCEAB2] mx-auto py-[5%]'>
+		<section id='dealer'>
+			<div id='board_dealer' class='flex flex-wrap gap-x-1'>
+			</div>
+			<div class='mt-5 h-14 w-14 rounded-full border-4 border-green-700 border-opacity-10 flex items-center justify-center mx-auto'>
+				<span id='count_dealer' class='text-green-700 text-xl tracking-tighter font-bold'>0</span>
+			</div>
+		</section>
+		<section id='options' class='relative flex items-center justify-center gap-x-2 bg-[#667b99] w-full h-[20%]'>
+			<button id='play' class='rounded-full'><img src="./assets/play.png" class='w-12'></button>
+			<button id='pedir' class='rounded-full'><img src="./assets/pedir.png" class='w-12'></button>
+			<button id='detener' class='rounded-full'><img src="./assets/detener.png" class='w-12'></button>
+			<div id='resultado' class='absolute hidden w-full h-full bg-[#667b99] flex flex-col items-center justify-center cursor-pointer'>
+				<div class='flex items-center gap-x-3'>
+					<img alt='resultado' class='bg-white rounded-full w-6 h-6'>
+					<span class='text-zinc-50 font-medium text-3xl tracking-tighter capitalize'></span>
+				</div>
+				<small class='font-medium tracking-tight animate-pulse text-white'>Haz click para volver a jugar</small>
+			</div>
+		</section>
+		<section id='user'>
+			<div class='mb-5 h-14 w-14 rounded-full border-4 border-green-700 border-opacity-10 flex items-center justify-center mx-auto'>
+				<span id='count_user' class='text-green-700 text-xl tracking-tighter font-bold'>0</span>
+			</div>
+			<div id='board_user' class='flex flex-wrap gap-x-1'>
+			</div>
+		</section>
+	</main>
+
+<script defer type="text/javascript" src='./index.js'></script>
+</body>
+</html>
