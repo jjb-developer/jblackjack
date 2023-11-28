@@ -104,14 +104,15 @@ function pedirCard(cards){
 
 	if(count(value_count_user) <= 21){
 		$('#count_user').innerHTML = count(value_count_user)
+		render(cards_dealer,cards_user)
 	} else {
 		activeBoton($('#pedir'),true)
 		activeBoton($('#detener'),true)
 		$('#count_user').innerHTML = count(value_count_user)
 		point -= 50
+		render(cards_dealer,cards_user)
 		resultado('perdiste')
 	}
-	render(cards_dealer,cards_user)
 }
 
 function pedirCardDealer(cards){
@@ -186,16 +187,19 @@ $('#detener').addEventListener('click', ()=> {
 		pedirCardDealer(cards)
 		if(count(value_count_dealer) === count(value_count_user) && $('#detener').disabled === true ){
 			clearInterval(dealerPlaying)
+			render(cards_dealer,cards_user)
 			resultado('empataste')
 		}
 		if(count(value_count_dealer)<=21 && count(value_count_dealer) > count(value_count_user)){
 			clearInterval(dealerPlaying)
 			point -= 50
+			render(cards_dealer,cards_user)
 			resultado('perdiste')
 		}
 		if(count(value_count_dealer)>21){
 			clearInterval(dealerPlaying)
 			point += 50
+			render(cards_dealer,cards_user)
 			resultado('ganaste')
 		}
 	}, 1750)
